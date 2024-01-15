@@ -134,7 +134,7 @@ MonoBehaviour:
   path: []
   arriveDistance: 0.8
   lastpointArriveDistance: 0.8
-  turningAngleOffset: 3
+  turningAngleOffset: 4
   currentTargetPosition: {x: 0, y: 0, z: 0}
   <OnDrive>k__BackingField:
     m_PersistentCalls:

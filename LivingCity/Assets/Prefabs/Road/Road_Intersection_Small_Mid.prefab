@@ -239,10 +239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 167656157827886720}
   - {fileID: 1318132615497618436}
   - {fileID: 3799548346917192979}
-  - {fileID: 5302046328148806709}
   openForConnections: 0
 --- !u!1 &3473942646060105894
 GameObject:
@@ -481,7 +479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 8750323038475836121}
   - {fileID: 4414928393680943704}
   - {fileID: 2815222254834255115}
   - {fileID: 687016706127599438}

@@ -45,10 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 4414928393680943704}
   - {fileID: 324041893881802670}
   - {fileID: 464191683174454049}
-  - {fileID: 4936175066401174580}
   openForConnections: 0
 --- !u!1 &1463457593109024752
 GameObject:
@@ -190,9 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjacentMarkers:
-  - {fileID: 8750323038475836121}
-  - {fileID: 3930333066124407607}
+  adjacentMarkers: []
   openForConnections: 1
 --- !u!1 &3449398081241104595
 GameObject:
@@ -239,7 +235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 167656157827886720}
   - {fileID: 1318132615497618436}
   - {fileID: 3799548346917192979}
   openForConnections: 0
@@ -470,7 +465,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adjacentMarkers:
   - {fileID: 8750323038475836121}
-  - {fileID: 1318132615497618436}
   openForConnections: 0
 --- !u!1 &6699791421631719651
 GameObject:
@@ -517,8 +511,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 8750323038475836121}
-  - {fileID: 4414928393680943704}
   - {fileID: 2815222254834255115}
   openForConnections: 0
 --- !u!1 &6756318653699840555
@@ -613,10 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 2412208660262639987}
-  - {fileID: 324041893881802670}
   - {fileID: 3930333066124407607}
-  - {fileID: 3799548346917192979}
   openForConnections: 0
 --- !u!1 &7831956528917728878
 GameObject:
@@ -662,8 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjacentMarkers:
-  - {fileID: 3799548346917192979}
+  adjacentMarkers: []
   openForConnections: 1
 --- !u!1 &8957576345387877786
 GameObject:
@@ -709,9 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjacentMarkers:
-  - {fileID: 1318132615497618436}
-  - {fileID: 4936175066401174580}
+  adjacentMarkers: []
   openForConnections: 1
 --- !u!1001 &5351956102448848667
 PrefabInstance:
@@ -721,58 +707,47 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2828643349361200260}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0.49999997
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 53b005f0a33b8224d84874b55f72f676,
-        type: 3}
+    - target: {fileID: 919132149155446097, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
       propertyPath: m_Name
       value: Road_Default
       objectReference: {fileID: 0}
@@ -783,7 +758,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
 --- !u!4 &5606786670680602864 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 53b005f0a33b8224d84874b55f72f676, type: 3}
   m_PrefabInstance: {fileID: 5351956102448848667}
   m_PrefabAsset: {fileID: 0}
