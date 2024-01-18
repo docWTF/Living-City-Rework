@@ -9,9 +9,17 @@ public class CarSpawnTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        aiDirector.SpawnACar();
-        Debug.Log("Attempting to spawn a car");
+        SpawnCar();
     }
 
+    IEnumerator SpawnCar()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            aiDirector.SpawnACar();
+            Debug.Log("Attempting to spawn a car");
+            yield return new WaitForSeconds(2f);
+        }
+    }
 
 }
