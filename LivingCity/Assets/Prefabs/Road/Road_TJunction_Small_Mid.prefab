@@ -290,9 +290,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2828643349361200260}
   - component: {fileID: 8521227172918602176}
-  - component: {fileID: -1117490652903443237}
-  - component: {fileID: 1165139481877058256}
   - component: {fileID: 2363797880985816789}
+  - component: {fileID: 1165139481877058256}
   m_Layer: 0
   m_Name: Road_TJunction_Small_Mid
   m_TagString: Untagged
@@ -332,56 +331,6 @@ MonoBehaviour:
   type: 1
   gridManager: {fileID: 0}
   objectPosition: {x: 0, y: 0, z: 0}
---- !u!114 &-1117490652903443237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523944747292426009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6c3ed8b27de0a499778fb7d316d30e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pedestrianMarkers: []
-  carMarkers:
-  - {fileID: 2412208660262639987}
-  - {fileID: 8750323038475836121}
-  - {fileID: 4936175066401174580}
-  - {fileID: 1318132615497618436}
-  - {fileID: 324041893881802670}
-  - {fileID: 464191683174454049}
-  - {fileID: 167656157827886720}
-  - {fileID: 4414928393680943704}
-  - {fileID: 3930333066124407607}
-  - {fileID: 2815222254834255115}
-  - {fileID: 3799548346917192979}
-  isCorner: 0
-  hasCrosswalks: 0
-  incoming: {fileID: 0}
-  outgoing: {fileID: 0}
---- !u!65 &1165139481877058256
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523944747292426009}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.00542, y: 0.0281753, z: 1.001185}
-  m_Center: {x: 0, y: 0.01358119, z: 0}
 --- !u!114 &2363797880985816789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +368,27 @@ MonoBehaviour:
   - {fileID: 2412208660262639987}
   - {fileID: 2815222254834255115}
   - {fileID: 464191683174454049}
+--- !u!65 &1165139481877058256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523944747292426009}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.00542, y: 0.0281753, z: 1.001185}
+  m_Center: {x: 0, y: 0.01358119, z: 0}
 --- !u!1 &5211782119370151023
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 3930333066124407607}
+  - {fileID: 2412208660262639987}
+  - {fileID: 3799548346917192979}
   openForConnections: 0
 --- !u!1 &7831956528917728878
 GameObject:

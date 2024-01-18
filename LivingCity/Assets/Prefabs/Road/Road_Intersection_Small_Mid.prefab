@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &256141246427494470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2044097581311627651}
+  - component: {fileID: 6974336623890364066}
+  m_Layer: 0
+  m_Name: CarMarker (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2044097581311627651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256141246427494470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.465, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6946092609309064119}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6974336623890364066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256141246427494470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjacentMarkers:
+  - {fileID: 464191683174454049}
+  openForConnections: 0
 --- !u!1 &1331418873581437598
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,9 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adjacentMarkers:
   - {fileID: 4414928393680943704}
-  - {fileID: 8750323038475836121}
   - {fileID: 464191683174454049}
-  - {fileID: 4936175066401174580}
+  - {fileID: 8750323038475836121}
   openForConnections: 0
 --- !u!1 &1463457593109024752
 GameObject:
@@ -97,6 +143,7 @@ MonoBehaviour:
   adjacentMarkers:
   - {fileID: 8750323038475836121}
   - {fileID: 2412208660262639987}
+  - {fileID: 8285942632143013622}
   openForConnections: 1
 --- !u!1 &2259770948765116354
 GameObject:
@@ -190,10 +237,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjacentMarkers:
-  - {fileID: 8750323038475836121}
-  - {fileID: 3930333066124407607}
+  adjacentMarkers: []
   openForConnections: 1
+--- !u!1 &2575245030981646178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4099284547539454171}
+  - component: {fileID: 8285942632143013622}
+  m_Layer: 0
+  m_Name: CarMarker (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4099284547539454171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575245030981646178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.465, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6946092609309064119}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8285942632143013622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575245030981646178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjacentMarkers:
+  - {fileID: 5302046328148806709}
+  openForConnections: 0
 --- !u!1 &3449398081241104595
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +333,7 @@ MonoBehaviour:
   adjacentMarkers:
   - {fileID: 1318132615497618436}
   - {fileID: 3799548346917192979}
+  - {fileID: 5302046328148806709}
   openForConnections: 0
 --- !u!1 &3473942646060105894
 GameObject:
@@ -277,9 +370,11 @@ Transform:
   - {fileID: 744190625427021726}
   - {fileID: 5210304296685316429}
   - {fileID: 5065918298925854889}
+  - {fileID: 2044097581311627651}
   - {fileID: 4510664789616700861}
   - {fileID: 8900501993127833820}
   - {fileID: 3410152576553761993}
+  - {fileID: 4099284547539454171}
   - {fileID: 4321438294730334701}
   - {fileID: 8087067901617478031}
   - {fileID: 5659701788182959787}
@@ -295,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2828643349361200260}
   - component: {fileID: 8521227172918602176}
-  - component: {fileID: -1117490652903443237}
+  - component: {fileID: 5260001523577165480}
   - component: {fileID: 1165139481877058256}
   m_Layer: 0
   m_Name: Road_Intersection_Small_Mid
@@ -336,7 +431,7 @@ MonoBehaviour:
   type: 1
   gridManager: {fileID: 0}
   objectPosition: {x: 0, y: 0, z: 0}
---- !u!114 &-1117490652903443237
+--- !u!114 &5260001523577165480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,7 +440,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4523944747292426009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6c3ed8b27de0a499778fb7d316d30e, type: 3}
+  m_Script: {fileID: 11500000, guid: 029085b6b54baf04b8f0cdd53f4264dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pedestrianMarkers: []
@@ -354,17 +449,30 @@ MonoBehaviour:
   - {fileID: 8750323038475836121}
   - {fileID: 4936175066401174580}
   - {fileID: 1318132615497618436}
-  - {fileID: 0}
   - {fileID: 464191683174454049}
+  - {fileID: 687016706127599438}
+  - {fileID: 6974336623890364066}
   - {fileID: 167656157827886720}
   - {fileID: 4414928393680943704}
   - {fileID: 3930333066124407607}
+  - {fileID: 8285942632143013622}
+  - {fileID: 5302046328148806709}
   - {fileID: 2815222254834255115}
   - {fileID: 3799548346917192979}
   isCorner: 0
   hasCrosswalks: 0
   incoming: {fileID: 0}
   outgoing: {fileID: 0}
+  incomingMarkers:
+  - {fileID: 167656157827886720}
+  - {fileID: 4936175066401174580}
+  - {fileID: 687016706127599438}
+  - {fileID: 3930333066124407607}
+  outgoingMarkers:
+  - {fileID: 2815222254834255115}
+  - {fileID: 5302046328148806709}
+  - {fileID: 464191683174454049}
+  - {fileID: 2412208660262639987}
 --- !u!65 &1165139481877058256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -430,9 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjacentMarkers:
-  - {fileID: 4414928393680943704}
-  - {fileID: 167656157827886720}
+  adjacentMarkers: []
   openForConnections: 1
 --- !u!1 &6699791421631719651
 GameObject:
@@ -479,9 +585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adjacentMarkers:
-  - {fileID: 4414928393680943704}
   - {fileID: 2815222254834255115}
-  - {fileID: 687016706127599438}
+  - {fileID: 8750323038475836121}
   openForConnections: 0
 --- !u!1 &6756318653699840555
 GameObject:
@@ -577,8 +682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adjacentMarkers:
   - {fileID: 2412208660262639987}
-  - {fileID: 1318132615497618436}
-  - {fileID: 3930333066124407607}
   - {fileID: 3799548346917192979}
   openForConnections: 0
 --- !u!1 &7831956528917728878
@@ -625,9 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f583e06b682dd48baf77b2510ba3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjacentMarkers:
-  - {fileID: 3799548346917192979}
-  - {fileID: 687016706127599438}
+  adjacentMarkers: []
   openForConnections: 1
 --- !u!1 &8957576345387877786
 GameObject:
@@ -724,6 +825,7 @@ MonoBehaviour:
   adjacentMarkers:
   - {fileID: 3799548346917192979}
   - {fileID: 2815222254834255115}
+  - {fileID: 6974336623890364066}
   openForConnections: 1
 --- !u!1001 &5351956102448848667
 PrefabInstance:
