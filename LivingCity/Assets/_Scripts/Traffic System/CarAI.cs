@@ -15,14 +15,19 @@ public class CarAI : MonoBehaviour
     private float turningAngleOffset = 5;
     [SerializeField]
     private Vector3 currentTargetPosition;
+    [SerializeField]
+    private GameObject raycastObject;
+    [SerializeField]
+    private float raycastLength;
 
     private int index = 0;
 
     private bool stop;
+    private bool stopCollision;
 
     public bool Stop
     {
-        get { return stop; }
+        get { return stop || stopCollision; }
         set { stop = value; }
     }
 
@@ -62,8 +67,22 @@ public class CarAI : MonoBehaviour
 
     private void Update()
     {
+        CheckForCollision();
         CheckIfArrived();
         Drive();
+        
+    }
+
+   private void CheckForCollision()
+    {
+        if (Physics.Raycast(raycastObject.transform.position, transform.forward, raycastLength, 1 << gameObject.layer))
+        {
+            stopCollision = true;
+        }
+        else
+        {
+            stopCollision = false;
+        }
     }
 
     private void Drive()
@@ -71,9 +90,11 @@ public class CarAI : MonoBehaviour
         if (Stop)
         {
             OnDrive?.Invoke(Vector2.zero);
+            this.GetComponent<BoxCollider>().isTrigger = false;
         }
         if(!Stop)
         {
+            this.GetComponent<BoxCollider>().isTrigger = true;
             Vector3 relativePoint = transform.InverseTransformPoint(currentTargetPosition);
 
             float angle = Mathf.Atan2(relativePoint.x, relativePoint.z) * Mathf.Rad2Deg;
@@ -121,4 +142,5 @@ public class CarAI : MonoBehaviour
             currentTargetPosition = path[index];
         }
     }
+
 }

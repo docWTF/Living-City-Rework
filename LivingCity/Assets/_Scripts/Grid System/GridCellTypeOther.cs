@@ -12,6 +12,7 @@ public class GridCellTypeOther : MonoBehaviour
 
     private void Start()
     {
+
         objectPosition = Vector3Int.FloorToInt(this.transform.position);
         gridManager = FindAnyObjectByType<GridManager>();
 
@@ -24,5 +25,9 @@ public class GridCellTypeOther : MonoBehaviour
         // gridManager.placementGrid[objectPosition.x, objectPosition.z] = type; 
         // gridManager.structureDictionary.Add(objectPosition, structure);
     }
+
+
+
+
 
 }

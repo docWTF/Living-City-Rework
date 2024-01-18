@@ -183,15 +183,6 @@ using UnityEngine.Timeline;
         }
     }
 
-    public void NewMethod(int parameter)
-        {
-            Debug.Log("hello");
-        }
-
-        public void NewMethdTow(string name)
-        {
-            Debug.Log(name);
-        }
     }
 
 
