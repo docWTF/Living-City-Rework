@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 922613836748446843}
   - component: {fileID: 3011161550265074999}
   m_Layer: 7
-  m_Name: Car
+  m_Name: Bus
   m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

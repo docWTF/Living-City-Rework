@@ -14047,8 +14047,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 684284042}
-  pedestrianPrefabs: []
-  carPrefab: {fileID: 515230698902430361, guid: 0c8938e5deac41f46b4615d1b35d7d61, type: 3}
+  carPrefab:
+  - {fileID: 515230698902430361, guid: 0c8938e5deac41f46b4615d1b35d7d61, type: 3}
+  - {fileID: 515230698902430361, guid: 37f605f5fcbea2840b52b129f253ed6b, type: 3}
+  - {fileID: 515230698902430361, guid: bb68055f5298fd14a81a85f2cc5461b9, type: 3}
+  prefabWeights: 070000000200000001000000
 --- !u!4 &1114103912
 Transform:
   m_ObjectHideFlags: 0

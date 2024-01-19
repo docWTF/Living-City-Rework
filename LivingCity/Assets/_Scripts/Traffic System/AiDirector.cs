@@ -5,17 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Timeline;
+using Random = UnityEngine.Random;
 
 
     public class AiDirector : MonoBehaviour
     {
         public GridManager gridManager;
-        public GameObject[] pedestrianPrefabs;
+        public GameObject[] carPrefab;
+        public int[] prefabWeights;
 
-        public GameObject carPrefab;
-
-        AdjacencyGraph pedestrianGraph = new AdjacencyGraph();
-        AdjacencyGraph carGraph = new AdjacencyGraph();
+    AdjacencyGraph carGraph = new AdjacencyGraph();
 
         List<Vector3> carPath = new List<Vector3>();
 
@@ -23,8 +22,10 @@ using UnityEngine.Timeline;
         {
             foreach (var spawner in gridManager.GetAllCarSpawner())
             {
-                
-                TrySpawninACar(spawner, gridManager.GetRandomCarDespawner());
+                if (spawner.GetCarSpawnerAvailability(spawner) == false)
+                {
+                    TrySpawninACar(spawner, gridManager.GetRandomCarDespawner());
+                }
             }
         }
 
@@ -51,61 +52,11 @@ using UnityEngine.Timeline;
 
             if (carPath.Count > 0)
             {
+                var carPrefab = GetWeightedRandomPrefab();
                 var car = Instantiate(carPrefab, startMarkerPosition.Position, Quaternion.identity);
                 car.GetComponent<CarAI>().SetPath(carPath);
             }
 
-            }
-        }
-
-        private List<Vector3> GetPedestrianPath(List<Vector3Int> path, Vector3 startPosition, Vector3 endPosition)
-        {
-            pedestrianGraph.ClearGraph();
-            CreatAPedestrianGraph(path);
-            Debug.Log(pedestrianGraph);
-            return AdjacencyGraph.AStarSearch(pedestrianGraph, startPosition, endPosition);
-        }
-
-        private void CreatAPedestrianGraph(List<Vector3Int> path)
-        {
-            Dictionary<Marker, Vector3> tempDictionary = new Dictionary<Marker, Vector3>();
-
-            for (int i = 0; i < path.Count; i++)
-            {
-                var currentPosition = path[i];
-                var roadStructure = gridManager.GetStructureAt(currentPosition);
-                var markersList = roadStructure.GetPedestrianMarkers();
-                bool limitDistance = markersList.Count == 4;
-                tempDictionary.Clear();
-                foreach (var marker in markersList)
-                {
-                    pedestrianGraph.AddVertex(marker.Position);
-                    foreach (var markerNeighbourPosition in marker.GetAdjacentPositions())
-                    {
-                        pedestrianGraph.AddEdge(marker.Position, markerNeighbourPosition);
-                    }
-
-                    if (marker.OpenForconnections && i + 1 < path.Count)
-                    {
-                        var nextRoadStructure = gridManager.GetStructureAt(path[i + 1]);
-                        if (limitDistance)
-                        {
-                            tempDictionary.Add(marker, nextRoadStructure.GetNearestPedestrianMarkerTo(marker.Position));
-                        }
-                        else
-                        {
-                            pedestrianGraph.AddEdge(marker.Position, nextRoadStructure.GetNearestPedestrianMarkerTo(marker.Position));
-                        }
-                    }
-                }
-                if (limitDistance && tempDictionary.Count == 4)
-                {
-                    var distanceSortedMarkers = tempDictionary.OrderBy(x => Vector3.Distance(x.Key.Position, x.Value)).ToList();
-                    for (int j = 0; j < 2; j++)
-                    {
-                        pedestrianGraph.AddEdge(distanceSortedMarkers[j].Key.Position, distanceSortedMarkers[j].Value);
-                    }
-                }
             }
         }
 
@@ -159,12 +110,25 @@ using UnityEngine.Timeline;
         }
     }
 
-    private GameObject GetRandomPedestrian()
+    private GameObject GetWeightedRandomPrefab()
+    {
+        int totalWeight = prefabWeights.Sum();
+        int choice = Random.Range(0, totalWeight);
+        int sum = 0;
+
+        for (int i = 0; i < carPrefab.Length; i++)
         {
-            return pedestrianPrefabs[UnityEngine.Random.Range(0, pedestrianPrefabs.Length)];
+            sum += prefabWeights[i];
+            if (choice < sum)
+            {
+                return carPrefab[i];
+            }
         }
 
-        private void Update()
+        return null;
+    }
+
+    private void Update()
     {
         DrawGraph(carGraph);
         for (int i = 1; i < carPath.Count; i++)

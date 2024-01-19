@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class CarSpawnerObject : MonoBehaviour
 {
+    List<GameObject> carsInSpawn = new List<GameObject>();
 
-    public List<CarAI> carList = new List<CarAI>();
+    public bool isOccupied;
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (carsInSpawn.Count == 0 && other.CompareTag("Car"))
+        {
+            carsInSpawn.Add(other.gameObject);
+            isOccupied = true;
+        }
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (carList.Count == 0 && collision.gameObject.tag == "Car")
+        if (carsInSpawn.Count > 0 && other.gameObject == carsInSpawn[0])
         {
-            
+            carsInSpawn.Clear();
+            isOccupied = false;
         }
     }
 }

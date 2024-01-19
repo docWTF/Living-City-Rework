@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113083277892661588}
   - component: {fileID: 7968354488122999317}
+  - component: {fileID: 4267538572595999682}
   - component: {fileID: 2016894367451408031}
   m_Layer: 0
   m_Name: CarSpawner
@@ -132,6 +133,19 @@ MonoBehaviour:
   type: 5
   gridManager: {fileID: 0}
   objectPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &4267538572595999682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894968499832799573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7137e46f50e52274791cffe65753d1fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOccupied: 0
 --- !u!65 &2016894367451408031
 BoxCollider:
   m_ObjectHideFlags: 0

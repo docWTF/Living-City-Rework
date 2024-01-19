@@ -48,4 +48,13 @@ public class Structure: MonoBehaviour, INeedingRoad
     {
         return transform.GetComponent<RoadHelper>().GetPositioForCarToStop(previousPathPosition);
     }
+    
+    public bool GetCarSpawnerAvailability (Structure carSpawnerObject)
+    {
+        if (carSpawnerObject.GetComponent<CarSpawnerObject>().isOccupied == true)
+        {
+            return true;
+        }
+        return false;
+    }
 }
