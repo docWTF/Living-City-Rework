@@ -112,9 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: []
-  arriveDistance: 0.8
-  lastpointArriveDistance: 0.8
-  turningAngleOffset: 6
+  arriveDistance: 0.5
+  lastpointArriveDistance: 0.5
+  turningAngleOffset: 10
   currentTargetPosition: {x: 0, y: 0, z: 0}
   raycastObject: {fileID: 6961812271617877817}
   raycastLength: 0.4

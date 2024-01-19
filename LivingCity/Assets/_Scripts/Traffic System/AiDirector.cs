@@ -23,6 +23,7 @@ using UnityEngine.Timeline;
         {
             foreach (var spawner in gridManager.GetAllCarSpawner())
             {
+                
                 TrySpawninACar(spawner, gridManager.GetRandomCarDespawner());
             }
         }

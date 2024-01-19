@@ -6,13 +6,13 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     public int width, height;
-    public Grid placementGrid;
+    public Grid gridManager;
 
     public Dictionary<Vector3Int, Structure> structureDictionary = new Dictionary<Vector3Int, Structure>();
 
     private void Start()
     {
-        placementGrid = new Grid(width, height);
+        gridManager = new Grid(width, height);
     }
 
     internal void PlaceObjectOnTheMap(Vector3Int position, GameObject structurePrefab, CellType type, int width = 1, int height = 1)
@@ -35,7 +35,7 @@ public class GridManager : MonoBehaviour
             for (int z = 0; z < height; z++)
             {
                 var newPosition = position + new Vector3Int(x, 0, z);
-                placementGrid[newPosition.x, newPosition.z] = type;
+                gridManager[newPosition.x, newPosition.z] = type;
                 structureDictionary.Add(newPosition, structure);
             }
         }
@@ -47,7 +47,7 @@ public class GridManager : MonoBehaviour
     {
         Structure structure = structurePrefab.AddComponent<Structure>();
 
-                placementGrid[position.x, position.z] = type;
+                gridManager[position.x, position.z] = type;
                 structureDictionary.Add(position, structure);
 
 
@@ -56,7 +56,7 @@ public class GridManager : MonoBehaviour
 
     internal CellType[] GetNeighbourTypesFor(Vector3Int position)
     {
-        return placementGrid.GetAllAdjacentCellTypes(position.x, position.z);
+        return gridManager.GetAllAdjacentCellTypes(position.x, position.z);
     }
 
     internal bool CheckIfPositionInBound(Vector3Int position)
@@ -87,13 +87,13 @@ public class GridManager : MonoBehaviour
 
     private bool CheckIfPositionIsOfType(Vector3Int position, CellType type)
     {
-        return placementGrid[position.x, position.z] == type;
+        return gridManager[position.x, position.z] == type;
     }
 
 
     internal List<Vector3Int> GetNeighboursOfTypeFor(Vector3Int position, CellType type)
     {
-        var neighbourVertices = placementGrid.GetAdjacentCellsOfType(position.x, position.z, type);
+        var neighbourVertices = gridManager.GetAdjacentCellsOfType(position.x, position.z, type);
         List<Vector3Int> neighbours = new List<Vector3Int>();
         foreach (var point in neighbourVertices)
         {
@@ -104,7 +104,7 @@ public class GridManager : MonoBehaviour
 
     internal List<Vector3Int> GetPathBetween(Vector3Int startPosition, Vector3Int endPosition, bool isAgent = false)
     {
-        var resultPath = GridSearch.AStarSearch(placementGrid, new Point(startPosition.x, startPosition.z), new Point(endPosition.x, endPosition.z), isAgent);
+        var resultPath = GridSearch.AStarSearch(gridManager, new Point(startPosition.x, startPosition.z), new Point(endPosition.x, endPosition.z), isAgent);
         List<Vector3Int> path = new List<Vector3Int>();
         foreach (Point point in resultPath)
         {
@@ -115,44 +115,44 @@ public class GridManager : MonoBehaviour
 
     public Structure GetRandomRoad()
     {
-        var point = placementGrid.GetRandomRoadPoint();
+        var point = gridManager.GetRandomRoadPoint();
         return GetStructureAt(point);
     }
 
     public Structure GetRandomPavement()
     {
-        var point = placementGrid.GetRandomPavementPoint();
+        var point = gridManager.GetRandomPavementPoint();
         return GetStructureAt(point);
     }
 
     public Structure GetRandomSpecialStrucutre()
     {
-        var point = placementGrid.GetRandomSpecialStructurePoint();
+        var point = gridManager.GetRandomSpecialStructurePoint();
         return GetStructureAt(point);
     }
 
     public Structure GetRandomHouseStructure()
     {
-        var point = placementGrid.GetRandomHouseStructurePoint();
+        var point = gridManager.GetRandomHouseStructurePoint();
         return GetStructureAt(point);
     }
 
     public Structure GetRandomCarSpawner()
     {
-        var point = placementGrid.GetRandomCarSpawnerPoint();
+        var point = gridManager.GetRandomCarSpawnerPoint();
         return GetStructureAt(point);
     }
 
     public Structure GetRandomCarDespawner()
     {
-        var point = placementGrid.GetRandomCarDespawnerPoint();
+        var point = gridManager.GetRandomCarDespawnerPoint();
         return GetStructureAt(point);
     }
 
     public List<Structure> GetAllHouses()
     {
         List<Structure> returnList = new List<Structure>();
-        var housePositions = placementGrid.GetAllHouses();
+        var housePositions = gridManager.GetAllHouses();
         foreach (var point in housePositions)
         {
             returnList.Add(structureDictionary[new Vector3Int(point.X, 0, point.Y)]);
@@ -163,7 +163,7 @@ public class GridManager : MonoBehaviour
     internal List<Structure> GetAllSpecialStructures()
     {
         List<Structure> returnList = new List<Structure>();
-        var housePositions = placementGrid.GetAllSpecialStructure();
+        var housePositions = gridManager.GetAllSpecialStructure();
         foreach (var point in housePositions)
         {
             returnList.Add(structureDictionary[new Vector3Int(point.X, 0, point.Y)]);
@@ -174,7 +174,7 @@ public class GridManager : MonoBehaviour
     public List<Structure> GetAllCarSpawner()
     {
         List<Structure> returnList = new List<Structure>();
-        var housePositions = placementGrid.GetAllCarSpawner();
+        var housePositions = gridManager.GetAllCarSpawner();
         foreach (var point in housePositions)
         {
             returnList.Add(structureDictionary[new Vector3Int(point.X, 0, point.Y)]);
@@ -185,7 +185,7 @@ public class GridManager : MonoBehaviour
     public List<Structure> GetAllCarDespawner()
     {
         List<Structure> returnList = new List<Structure>();
-        var housePositions = placementGrid.GetAllCarDespawner();
+        var housePositions = gridManager.GetAllCarDespawner();
         foreach (var point in housePositions)
         {
             returnList.Add(structureDictionary[new Vector3Int(point.X, 0, point.Y)]);
