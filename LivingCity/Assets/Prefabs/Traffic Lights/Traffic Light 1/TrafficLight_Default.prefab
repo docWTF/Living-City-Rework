@@ -53,6 +53,7 @@ MonoBehaviour:
   timerGreen: 10
   timerYellow: 3
   timerRed: 10
+  timerWalk: 6
   redLight: {fileID: 5120196871584418065}
   yellowLight: {fileID: 5269084805449447100}
   greenLight: {fileID: 4408223467219622260}

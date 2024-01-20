@@ -14,11 +14,15 @@ public class CarSpawnTest : MonoBehaviour
 
     IEnumerator SpawnCar()
     {
-        for (int i = 0; i < 5; i++)
+        while (true)
         {
-            aiDirector.SpawnACar();
-            Debug.Log("Attempting to spawn a car");
-            yield return new WaitForSeconds(2f);
+            for (int i = 0; i < 5; i++)
+            {
+                aiDirector.SpawnACar();
+                Debug.Log("Attempting to spawn a car");
+                yield return new WaitForSeconds(2f);
+            }
+            yield return new WaitForSeconds(10f);
         }
     }
 

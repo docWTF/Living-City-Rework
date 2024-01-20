@@ -6,7 +6,6 @@ using UnityEngine;
 public class TrafficLights : MonoBehaviour
 {
 
-
     public TrafficLightColor lightColor;
 
 
@@ -20,6 +19,7 @@ public class TrafficLights : MonoBehaviour
     private int timerWalk = 6;
     [SerializeField]
     private GameObject redLight, yellowLight, greenLight;
+
 
     public enum TrafficLightColor
     {
@@ -41,6 +41,7 @@ public class TrafficLights : MonoBehaviour
     {
         StartCoroutine(TrafficLightsTimer(this, timerGreen, timerYellow, timerRed, timerWalk, startColor));
     }
+
 
     IEnumerator TrafficLightsTimer(TrafficLights trafficLightObject,int timerGreen, int timerYellow, int timerRed, int timerWalk, TrafficLightStart startColor)
     {

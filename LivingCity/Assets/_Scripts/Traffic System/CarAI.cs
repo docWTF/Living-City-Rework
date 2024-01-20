@@ -16,7 +16,7 @@ public class CarAI : MonoBehaviour
     [SerializeField]
     private Vector3 currentTargetPosition;
     [SerializeField]
-    private GameObject raycastObject;
+    private GameObject raycastObject1, raycastObject2, raycastObject3;
     [SerializeField]
     private float raycastLength;
 
@@ -75,7 +75,9 @@ public class CarAI : MonoBehaviour
 
    private void CheckForCollision()
     {
-        if (Physics.Raycast(raycastObject.transform.position, transform.forward, raycastLength, 1 << gameObject.layer))
+        if (Physics.Raycast(raycastObject1.transform.position, transform.forward, raycastLength, 1 << gameObject.layer) || 
+                Physics.Raycast(raycastObject2.transform.position, transform.forward, raycastLength, 1 << gameObject.layer) || 
+                    Physics.Raycast(raycastObject3.transform.position, transform.forward, raycastLength, 1 << gameObject.layer))
         {
             stopCollision = true;
         }
@@ -142,5 +144,22 @@ public class CarAI : MonoBehaviour
             currentTargetPosition = path[index];
         }
     }
+
+    IEnumerator OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Delete Car"))
+        {
+            if (Stop == true)
+            {
+                yield return new WaitForSeconds(7f);
+                if (Stop == true)
+                {
+                    Destroy(gameObject);
+                }
+
+            }
+        }
+    }
+
 
 }
